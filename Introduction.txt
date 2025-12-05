@@ -1,0 +1,19 @@
+Introduction:
+For our project to find the best neighborhood in Pittsburgh, we used a metric of how likely a new family is to move there. This is a very wordy metric, but we feel that the submetrics we picked for it were able to get a good picture of how good the neighborhood was. The main reason we picked this metric was because of our submetrics. When first starting the project, we focused first on submetrics because they were easier to think of, and after we got a list of a couple of submetrics, Income, rent, parks, crime, schools, and safety, we narrowed it down to 3-4: Income, rent, parks, and crime. We later combined income and rent.
+
+Metrics:
+Cost:
+For our first metric, income and rent, we started by combining the two. We did this because we felt that either income or rent alone did not accurately tell us how nice the neighborhood was. For instance, Squirrel Hill had a really high income, but that was mainly because it was really expensive to live there, so you had to be making a lot of money. We wanted to find places that were cheaper to live in but also had high-paying jobs, and the best way for us to do that was to compare the two. To get the numbers for the metric, we found a CSV that had ranges of income and rent for each neighborhood. SO we summed up the total in each range for each neighborhood and multiplied it by a weight depending on the range. For instance, if the range for income was 25,000-30,000 we would multiply the lower bound in millions or 0.025. For rent, we did the same but in thousands. After we got the total sum for each neighborhood, we then divided the total weighted income by the rent. This gave us an income-to-rent ratio, so the higher this number, the better for each neighborhood.
+
+Crime:
+Next, for crime, we found a CSV that had police data. The problem we ran into with this data is that a lot of the data was of smaller crimes like public intoxication or traffic violations, so we had to weight the data in there as well. This was a bit more difficult than the rent, as there was not a set number we could use. Instead, we used values based on what we thought were the most dangerous crimes, and we then got a total for the most dangerous neighborhoods. 
+
+Parks:
+For the last submetric, we picked parks. We found a CSV with data on parks for each neighborhood and then summed up the total number of parks in each neighborhood. 
+
+Best Neighborhood
+To calculate the total rank for the best neighborhood, we first tried to find neighborhoods that were in the top 25 for each sub metric, but nothing overlapped on all, so we turned to taking the top performer for each metric and then dividing all the other neighborhoods by that top performer to see how they compare in porportion and so all the submetrics will have a numver 1-0. For the crime metric, we did not want the neighborhood with 1 to be the most valuable, so we subtracted that metric by 1 so that the top performer ended up being at 0 because it had the most crime. We then added the three proportions up to get a number 3-0 for each neighborhood, with the neighborhood at the top of the list being the highest performing in total.  Beechview ended up being the highest in the total of all metrics, so it is under our metric that is the best neighborhood in Pittsburgh.
+
+
+Conclusion:
+This answer was different than what our group thought was the best neighborhood in Pittsburgh. Some of our favorite neighborhoods in Pittsburgh are: Shadyside, Squirrel Hill, and Strip District. These ones didn't perform as well because Shadyside and Squirl Hill are very expensive to live in and don't have as many parks, and the strip district also does not have many parks.
